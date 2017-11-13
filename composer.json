@@ -1,0 +1,22 @@
+{
+    "name": "elsayednofal/easycrud",
+    "description": "test",
+    "type": "laravel",
+    "require": {
+        "elsayednofal/imagemanager": "dev-master",
+        "hosamaldeen/laracrud": "dev-master"
+    },
+    "license": "beta",
+    "authors": [
+        {
+            "name": "Elsayed Nofal",
+            "email": "elsayed_nofal@ymail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Elsayednofal\\Easycrud\\": "packages/elsayednofal/easycrud/src/"
+        }
+    },
+    "minimum-stability": "beta"
+}
