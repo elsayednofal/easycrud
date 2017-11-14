@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Elsayednofal\\Easycrud\\": "src/"
+            "Elsayednofal\\EasyCrud\\": "src/"
         }
     },
     "minimum-stability": "beta"
