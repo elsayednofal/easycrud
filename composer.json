@@ -2,7 +2,7 @@
     "name": "elsayednofal/easycrud",
     "description": "test",
     "type": "laravel",
-    "require-dev": {
+    "require": {
         "elsayednofal/imagemanager": "dev-master",
         "hosamaldeen/laracrud": "dev-master"
     },

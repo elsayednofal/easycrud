@@ -19,6 +19,7 @@ class EasyCrudCruds extends Migration
             $table->string('model');
             $table->string('type');
             $table->text('index_fildes');
+            $table->boolean('is_genrated')->default(true);
             $table->timestamps();
         });
     }

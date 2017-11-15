@@ -178,13 +178,15 @@ class EasyCrudController extends Controller {
         $base_model_json=$this->getData(url('laracrud/api/check-base-model'));
         $base_model_data= json_decode($base_model_json);
         if(!$base_model_data->exist){
-            $this->getData ('laracrud/api/generate-base-model');
+           // dd($base_model_data->exist);
+            $this->getData (url('laracrud/api/generate-base-model'));
         }
         
         
         $json=$this->getData(url('laracrud/api/check-model/'.$table_name));
         $models_data= json_decode($json);
         $model_class=new Models();
+        $models_data=array_reverse($models_data);
         foreach($models_data as $key=>$row){
             $models_data[$key]->generated=false;
             if(!$row->exist){
@@ -195,6 +197,7 @@ class EasyCrudController extends Controller {
             $models_data[$key]->is_valide=$this->validateModel($models_data[$key]->namespace);
             $models_data[$key]->table_name=$table_name;
         }
+        $models_data=array_reverse($models_data);
         echo json_encode($models_data);die();
     }
     
@@ -213,18 +216,22 @@ class EasyCrudController extends Controller {
 }
     
     function validateModel($namespace){
-        if((new \ReflectionClass($namespace))->isAbstract()){
-            return true;
-        }
-        
-        $object=new $namespace;
-        if(    method_exists($object,'validate')
-            && property_exists($object,'rules')
-            && property_exists($object,'guarded')
-            && property_exists($object,'errors')
-            && property_exists($object,'rules')
-           ){
-            return true;
+        try{
+            if((new \ReflectionClass($namespace))->isAbstract()){
+                return true;
+            }
+
+            $object=new $namespace;
+            if(    method_exists($object,'validate')
+                && property_exists($object,'rules')
+                && property_exists($object,'guarded')
+                && property_exists($object,'errors')
+                && property_exists($object,'rules')
+               ){
+                return true;
+            }
+        } catch (\Exception $ex){
+            return false;
         }
         return false;
     }

@@ -43,7 +43,7 @@ class EasyCrudServiceProvider extends ServiceProvider
             $this->publishes([
             __DIR__ . '/routes' => ('app/Http'),
                 ]);
-            $this->loadRoutesFrom(app_path().'/Http/easy-crud-route.php');
+            include app_path().'/Http/easy-crud-route.php';
         }
         
         
@@ -59,6 +59,8 @@ class EasyCrudServiceProvider extends ServiceProvider
         else:    
             include __DIR__.'/Http/routes.php';
         endif;   
+        
+        include __DIR__.'/helpers/functions.php';
     }
     /**
      * Register the application services.
