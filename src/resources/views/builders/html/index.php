@@ -88,8 +88,7 @@ $(document).ready(function(){
             url:$(this).attr('href'),
             success
             success:function(response){
-               // response=jQuery().parseJSON(response);
-                //console.log(response);
+                response=jQuery.parseJSON(response);
                 if(response.status==='ok'){
                     button.closest('tr').remove();
                 }
