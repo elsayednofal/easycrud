@@ -3,7 +3,7 @@
     "description": "test",
     "type": "laravel",
     "require": {
-        "elsayednofal/imagemanager": "dev-master",
+        "elsayednofal/imagemanager": "*",
         "hosamaldeen/laracrud": "dev-master"
     },
     "license": "beta",
