@@ -29,7 +29,7 @@ class HtmlComponent {
         } else if ($relation) {
             return 'Select Box';
         }else if($name=='password'){
-            return 'password Field';
+            return 'Password Field';
         }
         switch ($sql_type) {
             case 'varchar':
@@ -38,15 +38,19 @@ class HtmlComponent {
                 return 'Number Filed';
             case strpos( $sql_type, 'tinyint' ):
                 return 'Checkbox';
+            case strpos( $sql_type, 'enum' ):
+                return 'Select Box';
             case 'text':
                 return 'Text Area';
             case 'date':
-                return 'date';
+                return 'Date Field';
+            case 'timestamp':
+                return 'Timestamp';
         }
     }
 
     static function htmlDataTypes() {
-        return ['Text Filed','Date Field','password Field', 'Number Filed', 'Text Area', 'Image Manager', 'Checkbox', 'Select Box','Hidden value'];
+        return ['Text Filed','Date Field','Password Field', 'Number Filed','Timestamp', 'Text Area', 'Image Manager', 'Checkbox', 'Select Box','Hidden value'];
     }
 
     static function tableColumnsSelestor($name, $config=[]) {

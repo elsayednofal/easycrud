@@ -25,6 +25,7 @@ class EasyCrudController extends Controller {
 
     function getTableColumnsData(Request $request) {
         $response = new \stdClass();
+        //dd($request->all());
         if (!isset($request->table_name)) {
             $response->status = 'error';
             $response->message = 'Missing table name !';
@@ -54,7 +55,7 @@ class EasyCrudController extends Controller {
         $data['columns'] = $columns;
         $data['relations'] = $relations;
         $data['columns_property'] = $columns_property;
-
+        //dd($data['columns']);
         $response->status = 'ok';
         $response->message = 'success';
         $response->data = view('EasyCrud::table_columns_data', $data)->render();
@@ -62,19 +63,8 @@ class EasyCrudController extends Controller {
     }
 
     function test(Request $request) {
-        $object=new $request->namespace;
-        if(method_exists($object,'validate')){
-            echo 'validate exist';
-        }
-        if(property_exists($object,'rules')){
-            echo '<br/> Rules Exist';
-        }
-        if(property_exists($object,'guarded')){
-            echo '<br/> guarded Exist';
-        }
-        if(property_exists($object,'errors')){
-            echo '<br/> errors Exist';
-        }
+        $db=new DataBase;
+        dd($db->getColumns('admins'));
     }
     
     function save(Request $request){

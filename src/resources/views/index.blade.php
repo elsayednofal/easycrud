@@ -108,8 +108,8 @@ use Elsayednofal\EasyCrud\Http\Helpers\HtmlComponent; ?>
                     html+='<p>Model seem to be valide to use with Easy Crud </p>';
                 }else{
                     html+='<p style="color:red">Model seem not valide to use with with our Crud genrator</p>';
-                    html+='<button type="button" class="btn btn-outline-warning" id="re-generate-model" value="'+table_name+'">Re-Generate</button>';
                 }
+                html+='<button type="button" class="btn btn-outline-warning" id="re-generate-model" value="'+table_name+'">Re-Generate</button>';
             
             }
             html+='<input type="hidden" name="main_table[model]" value="'+namespace+'" />\n\

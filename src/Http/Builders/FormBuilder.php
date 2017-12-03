@@ -75,6 +75,11 @@ class FormBuilder extends Builder {
         return $view->render();
     }
     
+    function createTimestampField(EasyCrudsFileds $field){
+        $view=view(config("EasyCrud.templates_path").'.builders.forms.timestamp_filed',['field'=>$field]);
+        return $view->render();
+    }
+    
     function createDateField(EasyCrudsFileds $field){
         $view=view(config("EasyCrud.templates_path").'.builders.forms.date_filed',['field'=>$field]);
         return $view->render();
@@ -89,6 +94,8 @@ class FormBuilder extends Builder {
                 return $this->createTextField($field);
             case 'Number Filed':
                 return $this->createNumberFiled($field);
+            case 'Password Field':
+                return $this->createPasswordField($field);
             case 'Text Area':
                 return $this->createTextAreaField($field);
             case 'Image Manager':
@@ -99,6 +106,10 @@ class FormBuilder extends Builder {
                 return $this->createSelectBoxField($field);
             case 'Hidden value':
                 return $this->createHiddenField($field);
+            case 'Date Field':
+                return $this->createDateField($field);
+            case 'Timestamp':
+                return $this->createTimestampField($field);
         }
     }
     

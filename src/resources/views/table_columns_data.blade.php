@@ -52,7 +52,16 @@ use Elsayednofal\EasyCrud\Http\Helpers\HtmlComponent;
                     @endif
                 </td>
                 <td class="static-values">
-                    <textarea style="display: none" name="{{$table_name.'['. $column .'][static_value]'}}" class="form-control"></textarea>
+                    @if(strstr( $type, 'enum' ))
+                        <?php
+                            $data= trim($type, "enum('");
+                            $data= trim($data, "')");
+                            $data= str_replace("','", ";", $data);
+                        ?>
+                        <textarea readonly name="{{$table_name.'['. $column .'][static_value]'}}" class="form-control" >{{$data}}</textarea>
+                    @else
+                        <textarea style="display: none" name="{{$table_name.'['. $column .'][static_value]'}}" class="form-control"></textarea>
+                    @endif
                 </td>
             </tr>
         @endforeach

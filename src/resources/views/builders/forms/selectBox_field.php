@@ -8,7 +8,7 @@ if ($field->is_forgin == 1) {
     echo '$select_array[$row->' . $field->related_column . ']=$row->' . $field->referance_column . ';' . "\n";
     echo '}' . "\n";
 } else {
-    echo '$select_array=["' . str_replace(',', '","', $field->static_value) . '"];' . "\n";
+    echo '$select_array=["' . str_replace(';', '","', $field->static_value) . '"];' . "\n";
 }
 echo " ?>\n";
 ?>
