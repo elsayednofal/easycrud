@@ -13,7 +13,7 @@ class {{ucfirst(camel_case($crud->name))}}Controller extends Controller
 {
     function anyIndex(Request $request){
         $object= new {{$model_name}};
-        if($request->has('submit')){
+        if($request->has('{{lcfirst($crud->name)}}')){
             foreach($request->{{lcfirst($crud->name)}} as $key=>$value){
                 if(is_numeric($value)){
                     $object=$object->where($key,$value);
@@ -36,7 +36,7 @@ class {{ucfirst(camel_case($crud->name))}}Controller extends Controller
     }
     
     function anyUpdate(Request $request,$id){
-        ${{lcfirst($crud->name)}}=  {{$model_name}}::find($id);
+        ${{lcfirst($crud->name)}}=  {{$crud->name}}::find($id);
         if(!${{lcfirst($crud->name)}})abort (404);
         $data['{{lcfirst($crud->name)}}_obj']=${{lcfirst($model_name)}};
         if($request->method()=='POST'){
@@ -64,13 +64,14 @@ class {{ucfirst(camel_case($crud->name))}}Controller extends Controller
         try{
             ${{lcfirst($crud->name)}}->fill($this->resolveImageArrayRequest($request->{{lcfirst($crud->name)}}));
             if(!${{lcfirst($crud->name)}}->validate()){
-                Session::flash('validate_errrors',  implode('<br/>', ${{lcfirst($crud->name)}}->errors()->all()));
+                Session::flash('validate_errors',  implode('<br/>', ${{lcfirst($crud->name)}}->errors()->all()));
+				throw new \Exception('validate errors');
             }
             ${{lcfirst($crud->name)}}->save();
             
             DB::commit();
             Session::flash('success', 'Saved successfully.');
-        } catch (Exception $ex) {
+        } catch (\Exception $ex) {
             DB::rollBack();
         }
         return ${{lcfirst($crud->name)}};

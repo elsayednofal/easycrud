@@ -50,7 +50,7 @@ class HtmlBuilder extends Builder {
     
     private static function displaySelect(EasyCrudsFileds $field,$row='$row'){
         if($field->is_forgin){
-            return '{{'.$row.'->'.str_singular($field->related_table).'->'.$field->related_column.'}}';
+            return '{{'.$row.'->'.camel_case(str_singular($field->related_table)).'->'.$field->related_column.'}}';
         }else{
             return '{{'.$row.'->'.$field->name.'}}';
         }

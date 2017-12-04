@@ -1,8 +1,8 @@
-<?php echo '@extends(config("EasyCrud.backend_layout"))' . "\n"; ?>
+<?php echo '@extends('.config("EasyCrud.backend_layout").')' . "\n"; ?>
 
 <?php echo '@section("title")Update ' . $crud->name . ' @stop' . "\n"; ?>
 
-<?php echo '@section(config("EasyCrud.layout_content_area"))' . "\n"; ?>
+<?php echo '@section('.config("EasyCrud.layout_content_area").')' . "\n"; ?>
 
 <script  src="{{url('vendor/elsayednofal/EasyCrud/js/jquery.validate.min.js')}}" ></script>
 <ol class="breadcrumb">

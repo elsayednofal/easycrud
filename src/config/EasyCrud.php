@@ -7,6 +7,6 @@ return [
     ],
     'url_prefix'=>'backend',
     'controllers_directory'=>'backend',
-    'templates_path'=>'easy-crud/builders'
+    'templates_path'=>'easy-crud'
 ];
 
