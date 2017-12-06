@@ -4,7 +4,7 @@
 
 <?php echo '@section(config("EasyCrud.layout_content_area"))' . "\n"; ?>
 
-<script  src="{{url('vendor/elsayednofal/EasyCrud/js/jquery.validate.min.js')}}" ></script>
+<script  src=<?php echo '"{{url(\'vendor/elsayednofal/easycrud/js/jquery.validate.min.js\')}}"'?> ></script>
 <ol class="breadcrumb">
   <li><a href="#">Home</a></li>
   <li><a href="./{{config('EasyCrud.url_prefix')}}/{{kebab_case(ucfirst(camel_case($crud->name)))}}">{{$crud->name}}</a></li>

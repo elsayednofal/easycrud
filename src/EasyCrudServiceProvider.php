@@ -38,12 +38,10 @@ class EasyCrudServiceProvider extends ServiceProvider
             $this->publishes([
             __DIR__ . '/routes' => ('routes'),
                 ]);
-            $this->loadRoutesFrom(base_path().'/routes/easy-crud-route.php');
         }else{
             $this->publishes([
             __DIR__ . '/routes' => ('app/Http'),
                 ]);
-            include app_path().'/Http/easy-crud-route.php';
         }
         
         
