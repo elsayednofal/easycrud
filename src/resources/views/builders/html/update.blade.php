@@ -5,11 +5,17 @@
 <?php echo '@section('.config("EasyCrud.layout_content_area").')' . "\n"; ?>
 
 <script  src=<?php echo '"{{url(\'vendor/elsayednofal/easycrud/js/jquery.validate.min.js\')}}"'?> ></script>
-<ol class="breadcrumb">
-  <li><a href="javascript:void()">Home</a></li>
-  <li><a href="./{{config('EasyCrud.url_prefix')}}/{{kebab_case(ucfirst(camel_case($crud->name)))}}">{{$crud->name}}</a></li>
-  <li class="active">Update</li>
-</ol>
+
+<div class="row" style="background-color: #FFFFFF;    padding: 0 10px 0px 10px;">
+    <h2>{{kebab_case(ucfirst(camel_case($crud->name)))}}</h2>
+    <ol class="breadcrumb">
+      <li><a href="javascript:void()">Home</a></li>
+      <li><a href="./{{config('EasyCrud.url_prefix')}}/{{kebab_case(ucfirst(camel_case($crud->name)))}}">{{$crud->name}}</a></li>
+      <li class="active">Update</li>
+    </ol>
+</div>
+
+<br style="clear:both">
 
 <div class="panel panel-primary">
     <div class="panel-heading"><h3 class="panel-title">Update {{$crud->name}}</h3></div>
@@ -29,9 +35,8 @@
         </button>
     </div>
     <?php echo '<?php endif; ?>' . "\n"; ?>
-    <div class="row">
-        <?php echo '@include("backend.' . $crud->name . '._form")' . "\n"; ?>
-    </div>
+    
+    <?php echo '@include("backend.' . $crud->name . '._form")' . "\n"; ?>
         
     </div>
 </div>
