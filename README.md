@@ -25,20 +25,27 @@ Elsayednofal\EasyCrud\EasyCrudRouteServiceProvider::class,`
 >you can edit your configration throw file config/easycrud.php
 - "backend_layout" the path to your layout blade of backend
  like `'backend_layout'=>'backend.layout.master',`
+
 - "layout_content_area" the yield section of content 
 like `'layout_content_area'=>'content',`
+
 - "middlewares" the array of middleware names should be added to any genrated crud 
 like `'middlewares'=>['auth','is_admin' ],`
+
 - "url_prefix" the url prefix for backend or admin area should be add before crud name in url like `'url_prefix'=>'backend',` the url should br "./public/backend/products"
+
 - "controllers_directory" the folder in app\http\controller directory to put generated controller into it , like `"controllers_directory"=>"backend",`
+
 - "templates_path" the templete path which crud generate any file from it , like `"templates_path"=>"backend"`
 
 
 ### Usage
 - run url `{your app path}/easy-crud`
 - choose table from select box and press "show model&colums"
+
 > you will see the path of generated model 
 > you also get the table columns to choose theme and relation in database 
+
 - click save and then generate 
 - then you should show link to you crud 
 
