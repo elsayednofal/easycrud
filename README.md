@@ -15,9 +15,8 @@ https://github.com/hosamaldeen/laracrud
     
 - install package by run command `composer require elsayednofal/easycrud:dev-master`
 - add service provider to config/app.php 
-`Elsayednofal\EasyCrud\EasyCrudServiceProvider::class,
-
-Elsayednofal\EasyCrud\EasyCrudRouteServiceProvider::class,`
+`Elsayednofal\EasyCrud\EasyCrudServiceProvider::class,`
+`Elsayednofal\EasyCrud\EasyCrudRouteServiceProvider::class,`
 
 - publish assets with command `php artisan vendor:publish`
 - add easycrud tables to database with command `php artisan migrate`
