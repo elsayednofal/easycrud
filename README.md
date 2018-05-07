@@ -2,17 +2,11 @@
 This package to generate model and crud from database table and add it to laravel backend.
 
 # Dependancy 
-you should install model generator package from url :
-https://github.com/hosamaldeen/laracrud
+ 1- model generator package from url : https://github.com/hosamaldeen/laracrud
+ 2- image Manager package from url : https://github.com/elsayednofal/imagemanager
 
 ### Installation
-- add repositorie to your composer.json 
-` "repositories": [
-    {
-      "type": "vcs",
-      "url":  "https://elsayednofal:Hhs7muc67EvYp39VNHyu@bitbucket.org/elsayednofal/easycrud.git"
-    }]`
-    
+  
 - install package by run command `composer require elsayednofal/easycrud:dev-master`
 - add service provider to config/app.php 
 `Elsayednofal\EasyCrud\EasyCrudServiceProvider::class,`
