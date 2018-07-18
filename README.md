@@ -11,13 +11,16 @@ This package to generate model and crud from database table and add it to larave
 - install package by run command `composer require elsayednofal/easycrud:dev-master`
 - add service provider to config/app.php 
 
-`Elsayednofal\EasyCrud\EasyCrudServiceProvider::class,
- Elsayednofal\Imagemanager\ImageManagerServiceProvider::class,
- Hosamaldeen\LaraCRUD\LaraCRUDServiceProvider::class,
- Elsayednofal\EasyCrud\EasyCrudRouteServiceProvider::class,`
+`Elsayednofal\EasyCrud\EasyCrudServiceProvider::class,`
+
+ `Elsayednofal\Imagemanager\ImageManagerServiceProvider::class,`
+ 
+ `Hosamaldeen\LaraCRUD\LaraCRUDServiceProvider::class,`
+ 
+ `Elsayednofal\EasyCrud\EasyCrudRouteServiceProvider::class,`
 
 - in alias add the line
-`ImageManager' => Elsayednofal\Imagemanager\Http\Controllers\Facades\ImageManager::class`
+`'ImageManager' => Elsayednofal\Imagemanager\Http\Controllers\Facades\ImageManager::class`
 
 - publish assets with command `php artisan vendor:publish`
 - add easycrud tables to database with command `php artisan migrate`
