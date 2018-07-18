@@ -12,12 +12,9 @@ This package to generate model and crud from database table and add it to larave
 - add service provider to config/app.php 
 
 `Elsayednofal\EasyCrud\EasyCrudServiceProvider::class,
-
-Elsayednofal\Imagemanager\ImageManagerServiceProvider::class,
-
-Hosamaldeen\LaraCRUD\LaraCRUDServiceProvider::class,
-
-Elsayednofal\EasyCrud\EasyCrudRouteServiceProvider::class,`
+ Elsayednofal\Imagemanager\ImageManagerServiceProvider::class,
+ Hosamaldeen\LaraCRUD\LaraCRUDServiceProvider::class,
+ Elsayednofal\EasyCrud\EasyCrudRouteServiceProvider::class,`
 
 - in alias add the line
 `ImageManager' => Elsayednofal\Imagemanager\Http\Controllers\Facades\ImageManager::class`
