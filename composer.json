@@ -6,7 +6,7 @@
         "elsayednofal/imagemanager": "*",
         "hosamaldeen/laracrud": "dev-master"
     },
-    "license": "beta",
+    "license": "MIT",
     "authors": [
         {
             "name": "Elsayed Nofal",
@@ -18,5 +18,5 @@
             "Elsayednofal\\EasyCrud\\": "src/"
         }
     },
-    "minimum-stability": "MIT"
+    "minimum-stability": "beta"
 }
