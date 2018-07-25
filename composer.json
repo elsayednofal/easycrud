@@ -18,5 +18,5 @@
             "Elsayednofal\\EasyCrud\\": "src/"
         }
     },
-    "minimum-stability": "beta"
+    "minimum-stability": "MIT"
 }
