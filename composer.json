@@ -1,6 +1,6 @@
 {
     "name": "elsayednofal/easycrud",
-    "description": "test",
+    "description": "crud generator for laravel backend",
     "type": "laravel",
     "require": {
         "elsayednofal/imagemanager": "*",
