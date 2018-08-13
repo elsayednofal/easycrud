@@ -1,8 +1,8 @@
-<?php echo '@extends(config("EasyCrud.backend_layout"))' . "\n"; ?>
+@extends({{config("EasyCrud.backend_layout")}})
 
 <?php echo '@section("title")Create ' . $crud->name . ' @stop' . "\n"; ?>
 
-<?php echo '@section(config("EasyCrud.layout_content_area"))' . "\n"; ?>
+@section({{config("EasyCrud.layout_content_area")}})
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 @if(App::getLocale()!='en')

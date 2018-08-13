@@ -18,7 +18,7 @@ class EasyCrudServiceProvider extends ServiceProvider
             __DIR__ . '/config' => config_path(''),
                 ]);
         $this->publishes([
-        __DIR__.'/resources/views/builders' => base_path().'Views/easy-crud/builders',
+        __DIR__.'/resources/views/builders' => resource_path('Views/easy-crud/builders'),
     ]);
         
         //load migrations

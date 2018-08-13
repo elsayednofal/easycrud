@@ -1,8 +1,8 @@
-<?php echo '@extends(config("EasyCrud.backend_layout"))' . "\n"; ?>
+@extends({{config("EasyCrud.backend_layout")}})
 
 <?php echo '@section("title")' . $crud->name . ' @stop' . "\n"; ?>
 
-<?php echo '@section(config("EasyCrud.layout_content_area"))' . "\n"; ?>
+@section({{config("EasyCrud.layout_content_area")}})
 
 <?= '<?php $'.$crud->name.'_obj=new '.$crud->model.' ?>' ?>
 
@@ -102,7 +102,6 @@ $(document).ready(function(){
         button=$(this);
         $.ajax({
             url:$(this).attr('href'),
-            success
             success:function(response){
                 response=jQuery.parseJSON(response);
                 if(response.status==='ok'){
