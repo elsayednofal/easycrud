@@ -4,7 +4,10 @@
 
 <?php echo '@section('.config("EasyCrud.layout_content_area").')' . "\n"; ?>
 
-<script  src=<?php echo '"{{url(\'vendor/elsayednofal/easycrud/js/jquery.validate.min.js\')}}"'?> ></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+@if(App::getLocale()!='en')
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/localization/messages_{{App::getLocale()}}.js"></script>
+@endif
 
 <div class="row" style="background-color: #FFFFFF;    padding: 0 10px 0px 10px;">
     <h2>{{kebab_case(ucfirst(camel_case($crud->name)))}}</h2>
